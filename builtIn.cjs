@@ -14,6 +14,11 @@ bool = (obj) => {
 }
 
 // __file__ = __filename
+sum = (iter, type) => {
+    if (Array.isArray(iter)){
+        return iter.reduce((a, b) => a + b, 0)
+    }
+}
 
 function open(file, mode){
     import_file("fs")
