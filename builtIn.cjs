@@ -1,6 +1,4 @@
-const fs = require("fs")
-
-import_file = (library) => global.library = require(library)
+__import__ = (library) => global.library = require(library)
 print = console.log
 str = (string) => string.toString()
 len = (object) => object.length
@@ -9,6 +7,9 @@ ord = (string) => string.charCodeAt(0)
 exit = (code) => process.exit(code)
 quit = exit
 type = (obj) => typeof obj
+
+const fs = __import__("fs")
+
 bool = (obj) => {
     if (0 === obj.length){return false}
     else if (Object.keys(obj).length === 0 && typeof obj === 'object'){return false}
@@ -27,19 +28,18 @@ sum = (iter, type) => {
     }
 }
 
-function open(file, mode){
-    // import_file("fs")
-    let read
+copyright = () => print("eyal gabay created this library")
+
+function open(path, mode, encode="utf-8"){
     if (mode === "r"){
-        // fs.readFile(file, "utf8", (error, data) => {global(read) = data; print(data)})
-        // print()
-        return read
+        return fs.readFileSync(path, encode)
+
     }
 }
 
-
+// print(require.main === undefined)
+print(module)
 if (require.main === module){
-    // print(open("file.txt", "r"))
-    any([1, []])
+
 }
 
