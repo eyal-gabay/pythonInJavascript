@@ -22,6 +22,12 @@ any = (list) => {
     }
 }
 
+all = (list) => {
+    for (let i = 0; i < len(list); i++){
+        print(bool(i))
+    }
+}
+
 sum = (iter, type) => {
     if (Array.isArray(iter)){
         return iter.reduce((a, b) => a + b, 0)
